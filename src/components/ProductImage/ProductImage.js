@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductImage.module.scss';
 
-const ProductImage = ({ name, title, currentColor }) => {
+const ProductImage = ({name, title, currentColor}) => {
     const generateImageUrl = () => {
         return `${process.env.PUBLIC_URL}/images/products/shirt-${name.toLowerCase()}--${currentColor}.jpg`;
     };

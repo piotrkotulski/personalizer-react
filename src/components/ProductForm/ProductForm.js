@@ -24,9 +24,9 @@ const ProductForm = ({
     return (
         <div>
             <header>
-                <h2 className={styles.name}>{name}</h2> {/* Użyj przekazanej nazwy, a nie produkt.title */}
+                <h2 className={styles.name}>{name}</h2>
                 <span
-                    className={styles.price}>Price: {getPrice()}$</span> {/* Użyj przekazanej ceny, a nie getPrice() */}
+                    className={styles.price}>Price: {getPrice()}$</span>
             </header>
             <form>
                 <OptionSize
@@ -40,7 +40,6 @@ const ProductForm = ({
                     handleColorChange={handleColorChange}
                     profuct={{product}}
                 />
-
                 <Button className={styles.button} onClick={handleAddToCart}>
                     <span className="fa fa-shopping-cart"/>
                 </Button>
