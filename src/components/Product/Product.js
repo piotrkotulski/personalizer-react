@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useMemo} from 'react';
 import PropTypes from 'prop-types';
 import ProductImage from "../ProductImage/ProductImage";
 import ProductForm from "../ProductForm/ProductForm";
@@ -20,19 +20,19 @@ const Product = ({name, imageSrc}) => {
         setCurrentSize(size);
     };
 
-    const getPrice = () => {
+    const price = useMemo(() => {
         const selectedSize = product.sizes.find((size) => size.name === currentSize);
         const additionalPrice = selectedSize ? selectedSize.additionalPrice : 0;
         const totalPrice = product.basePrice + additionalPrice;
         return totalPrice;
-    };
+    }, [currentSize, product.basePrice, product.sizes]);
 
 
     const handleAddToCart = (event) => {
         event.preventDefault();
 
         console.log("Name:", product.title);
-        console.log("Price:", getPrice());
+        console.log("Price:", price);
         console.log("Size:", currentSize);
         console.log("Color:", currentColor);
     };
@@ -54,7 +54,7 @@ const Product = ({name, imageSrc}) => {
                 handleColorChange={handleColorChange}
                 handleSizeChange={handleSizeChange}
                 handleAddToCart={handleAddToCart}
-                getPrice={getPrice}
+                price={price}
             />
         </article>
     );

@@ -16,7 +16,7 @@ const ProductForm = ({
                          handleColorChange,
                          handleSizeChange,
                          handleAddToCart,
-                         getPrice
+                         price
 
                      }) => {
 
@@ -26,7 +26,7 @@ const ProductForm = ({
             <header>
                 <h2 className={styles.name}>{name}</h2>
                 <span
-                    className={styles.price}>Price: {getPrice()}$</span>
+                    className={styles.price}>Price: {price}$</span>
             </header>
             <form>
                 <OptionSize
