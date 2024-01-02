@@ -6,7 +6,7 @@ import styles from './Product.module.scss'; // Import styli
 
 import productsData from '../../data/products';
 
-const Product = ({ name, price, imageSrc }) => {
+const Product = ({ name, imageSrc }) => {
   const product = productsData.find((product) => product.name === name);
 
   const [currentColor, setCurrentColor] = useState(product.colors[0]);
@@ -66,7 +66,6 @@ const Product = ({ name, price, imageSrc }) => {
 
 Product.propTypes = {
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    imageSrc: PropTypes.string.isRequired,
+
 };
 export default Product;
