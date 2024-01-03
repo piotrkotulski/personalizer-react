@@ -6,13 +6,11 @@ import OptionSize from "../OptionSize/OptionSize";
 import styles from "./ProductForm.module.scss"
 
 const ProductForm = ({
-                         basePrice,
                          name,
                          currentColor,
                          currentSize,
                          colors,
                          sizes,
-                         product,
                          handleColorChange,
                          handleSizeChange,
                          handleAddToCart,
@@ -38,7 +36,6 @@ const ProductForm = ({
                     colors={colors}
                     currentColor={currentColor}
                     handleColorChange={handleColorChange}
-                    profuct={{product}}
                 />
                 <Button className={styles.button} onClick={handleAddToCart}>
                     <span className="fa fa-shopping-cart"/>
@@ -49,7 +46,6 @@ const ProductForm = ({
 };
 
 ProductForm.propTypes = {
-    basePrice: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     currentColor: PropTypes.string.isRequired,
     currentSize: PropTypes.string.isRequired,
